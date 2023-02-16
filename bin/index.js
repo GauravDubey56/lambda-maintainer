@@ -1,3 +1,4 @@
+#!/bin/bash
 const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 const Utils = require("./utils");
