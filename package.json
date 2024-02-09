@@ -1,0 +1,15 @@
+{
+  "name": "lambda-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "layer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1554.0",
+    "dotenv": "^16.4.1"
+  }
+}
