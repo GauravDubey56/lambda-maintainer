@@ -1,19 +1,19 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
-const dotenv = require('dotenv')
+const dotenv = require("dotenv");
 dotenv.config();
 const path = require("path");
 const AWS = require("aws-sdk");
 const awsLambdaConfig = {
-  awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: process.env.AWS_REGION,
+  region: process.env.AWS_FUNCTION_REGION,
 };
 const awsS3Config = {
-    awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_S3_REGION,
-  };
+  awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_S3_REGION,
+};
 const generateS3Key = (layerName) => {
   const currentDate = new Date().toISOString().split("T")[0];
   const FILE_KEY = `${layerName}_${Date.now().toString()}.zip`;
@@ -26,7 +26,7 @@ const findPackageJson = (directory) => {
     const filePath = path.join(directory, file);
     const stats = fs.statSync(filePath);
 
-    if (stats.isDirectory() && !filePath.includes('node_modules')) {
+    if (stats.isDirectory() && !filePath.includes("node_modules")) {
       // If it's a directory, recursively search inside
       const packageJsonPath = findPackageJson(filePath);
       if (packageJsonPath) {
@@ -53,11 +53,7 @@ if (!PACKAGE_JSON_PATH) {
 // Construct the absolute path to the package.json file
 const ABSOLUTE_PACKAGE_JSON_PATH = path.join(PACKAGE_JSON_PATH);
 
-// Create a temporary directory for packaging the Lambda layer
-// const TEMP_DIR = fs.mkdtempSync(
-//   path.join(require("os").tmpdir(), "lambda-layer")
-// );
-const TEMP_DIR = SCRIPT_DIR + '/TEMP_DIR'
+const TEMP_DIR = SCRIPT_DIR + "/TEMP_DIR";
 const LAYER_CONTENTS = path.join(TEMP_DIR, "layer_contents");
 
 // Create the folder structure and copy package.json
