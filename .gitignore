@@ -2,3 +2,4 @@
 *.env
 /node_modules
 /test_function
+/bin/AwsAccessInfo.json

@@ -1,0 +1,1 @@
+exports.AWS_INFO_PATH = 'AwsAccessInfo';
