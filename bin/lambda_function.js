@@ -227,7 +227,7 @@ const updateLambda = ({ awsLambdaConfig, functionName, layerVersionArn }) => {
         // });
         console.log('Lambda function not found on AWS account, please login to console and create one');
         fs.unlinkSync(ABSOLUTE_ZIP_PATH);
-        resolve(createLambda);
+        // resolve(createLambda);
         return;
       }
       lambda.updateFunctionCode(params, (err, data) => {
