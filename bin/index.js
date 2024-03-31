@@ -48,16 +48,17 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
-    "init <function_name>",
+    "init <function_name> [layer_name]",
     "function name",
     (yargs) => {
-      return yargs.positional("files", {
-        describe: "name of the lambda function",
+      return yargs.option("layer_name", {
+        describe: "name of the layer being used",
       });
     },
     (argv) => {
       // console.info(argv);
-      Utils.createFolder(argv.function_name);
+      console.log(argv)
+      Utils.createFolder(argv.function_name, argv.layer_name);
     }
   )
   .command(
