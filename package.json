@@ -1,5 +1,5 @@
 {
-  "name": "lambda-cli",
+  "name": "lambda-cli-util-tool",
   "version": "1.0.0",
   "description": "",
   "main": "layer.js",
