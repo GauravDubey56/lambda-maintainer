@@ -1,7 +1,7 @@
 {
   "name": "lambda-cli-util-tool",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.0.5",
+  "description": "A CLI tool to manage and deploy AWS Lambda functions.",
   "main": "layer.js",
   "keywords": [
     "AWS",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+{https://github.com/GauravDubey56/lambda-maintainer.git}"
+    "url": "https://github.com/GauravDubey56/lambda-maintainer.git"
   },
   "author": "",
   "license": "ISC",
