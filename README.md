@@ -16,7 +16,7 @@ func init <function_name> <layer_name>
 ```
 
 Initializes NPM directory with index.js file exporting handler. 
-Saves AWS access info inside a JSON file in package directory on the first usage.
+Prompts user for access keys and saves AWS access info inside a JSON file in package directory on the first usage.
 
 
 ```bash
